@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="skills">
     <div class="holder">
       <ul>
         <li v-for="(data, index) in skills" :key='index'>{{ index }}. {{ data.skill }}</li>
@@ -8,7 +8,7 @@
       <p v-if="skills.length >= 2">You have more than one skill.</p>
       <p v-else>You have less than or equal to one skill.</p>
 
-      <div v-bind:class="{ alert: showAlert, 'another-class': !showClass }"></div>
+      <div v-bind:class="alertObject"></div>
     </div>
   </div>
 </template>
@@ -22,8 +22,10 @@ export default {
         { "skill": "Vue.js" },
         { "skill": "Frontend Developer" }
       ],
-      showAlert: true,
-      showClass: true,
+      alertObject: {
+        alert: true,
+        //another-class: true,
+      }
     }
   }
 }
